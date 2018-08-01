@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".SignUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerInParent="true">
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtPhone"
+            android:hint="Phone Number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@android:color/white"
+            android:textSize="34sp"
+            android:text="9971293788"
+            android:inputType="phone"
+            app:met_baseColor="@android:color/white"
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+            />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtName"
+            android:hint="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@android:color/white"
+            android:textSize="34sp"
+            android:text="Tom Cruise"
+            android:inputType="text"
+            app:met_baseColor="@android:color/white"
+
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+            />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtPassword"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@android:color/white"
+            android:textSize="34sp"
+            android:text="1234"
+            android:inputType="textPassword"
+            app:met_baseColor="@android:color/white"
+
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:text="Sign Up"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        app:shadowHeight="5dp"
+        app:buttonColor="@color/btnSignActive"
+        app:shadowColor="@android:color/black"
+        app:cornerRadius="4dp"
+        app:shadowEnabled="true"
+        android:id="@+id/btnSignUp"
+        android:layout_height="wrap_content"
+        android:shadowColor="@android:color/black"
+        tools:ignore="MissingPrefix" />
+</RelativeLayout>

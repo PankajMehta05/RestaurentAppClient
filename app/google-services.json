@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "183495928700",
+    "firebase_url": "https://restaurentapp-3caf6.firebaseio.com",
+    "project_id": "restaurentapp-3caf6",
+    "storage_bucket": "restaurentapp-3caf6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183495928700:android:bfd944f05f20337d",
+        "android_client_info": {
+          "package_name": "resaurentapp.pankaj.com.restaurentapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183495928700-mtdcrljej6prtj8jrmb8orsj21icua2s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "resaurentapp.pankaj.com.restaurentapp",
+            "certificate_hash": "bb053c6a8ef42f64ae87ae5213a505e8c203a708"
+          }
+        },
+        {
+          "client_id": "183495928700-j1n5ai170g4j8qt6cq6hv0unuugitv26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKXLejamy3LeYpwbU1RyyBFRYxQrM5uQk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183495928700-j1n5ai170g4j8qt6cq6hv0unuugitv26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
