@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "resaurentapp.pankaj.com.restaurentapp"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 27
         buildToolsVersion "26.1"
         versionCode 1
@@ -22,6 +22,9 @@ android {
 }
 
 dependencies {
+
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
     implementation 'com.android.support:design:27.+'

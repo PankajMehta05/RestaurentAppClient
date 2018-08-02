@@ -5,15 +5,26 @@ public class User {
     private String Name;
     private String Password;
 
+    public String getPhone() {
+        return Phone;
+    }
+
+
+    private String Phone;
+
 public User()
 {
 
 }
-public User(String name, String password)
-{
-    Name=name;
-    Password=password;
-}
+
+    public User(String name, String password) {
+        Name = name;
+        Password = password;
+
+    }
+    public void setPhone(String phone) {
+        Phone = phone;
+    }
 
     public String getName() {
         return Name;

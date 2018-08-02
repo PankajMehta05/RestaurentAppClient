@@ -1,5 +1,6 @@
 package resaurentapp.pankaj.com.restaurentapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -59,7 +60,17 @@ viewHolder.food_name.setText(model.getName());
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(FoodList.this,""+local.getName(),Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(FoodList.this,""+local.getName(),Toast.LENGTH_SHORT).show();
+
+                        //Start new Activity
+                        Intent foodDetail=new Intent(FoodList.this,FoodDetail.class);
+
+
+                        //send food id to new activity
+
+
+                        foodDetail.putExtra("FoodId",adapter.getRef(position).getKey());
+startActivity(foodDetail);
                     }
                 });
             }
