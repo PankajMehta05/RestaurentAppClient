@@ -23,6 +23,8 @@ android {
 
 dependencies {
 
+    implementation 'com.github.mancj:MaterialSearchBar:0.7.6'
+
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     implementation fileTree(dir: 'libs', include: ['*.jar'])

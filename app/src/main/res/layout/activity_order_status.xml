@@ -5,24 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".FoodList">
+    tools:context=".OrderStatus">
 
 
-
-    <com.mancj.materialsearchbar.MaterialSearchBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchBar"
-        android:layout_alignParentTop="true"
-        app:mt_speechMode="false"
-        app:mt_hint="Cari makanan"
-
-        />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_food"
         android:layout_width="match_parent"
+        android:id="@+id/listOrders"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchBar"
-        android:scrollbars="vertical" />
+        android:background="@android:color/transparent"
+
+        ></android.support.v7.widget.RecyclerView>
 </RelativeLayout>
