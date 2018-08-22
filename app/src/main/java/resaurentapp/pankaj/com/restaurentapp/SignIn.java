@@ -53,9 +53,13 @@ Button btnSignIn;
                             user.setPhone(edtPhone.getText().toString());
                             if (user.getPassword().equals(edtPassword.getText().toString())) {
                                Intent homeIntent=new Intent(SignIn.this,Home.class);
+
+
                                 // Toast.makeText(SignIn.this, "Sign in sucessfully", Toast.LENGTH_SHORT).show();
                              //   resaurentapp.pankaj.com.restaurentapp.Common.Common.currentUser=user;
-                                resaurentapp.pankaj.com.restaurentapp.Common.Common.currentUser=user;
+
+
+                                    resaurentapp.pankaj.com.restaurentapp.Common.Common.currentUser=user;
                                 startActivity(homeIntent);
                                 finish();
                             } else {
