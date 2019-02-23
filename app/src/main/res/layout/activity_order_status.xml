@@ -15,5 +15,10 @@
         android:layout_height="match_parent"
         android:background="@android:color/transparent"
 
-        ></android.support.v7.widget.RecyclerView>
+        >
+
+
+
+
+    </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

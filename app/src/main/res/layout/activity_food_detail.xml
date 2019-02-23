@@ -202,7 +202,7 @@ android:id="@+id/number_button"
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
-    <android.support.design.widget.FloatingActionButton
+    <com.andremion.counterfab.CounterFab
         android:id="@+id/btnCart"
         android:src="@drawable/ic_shopping_cart_black_24dp"
         app:backgroundTint="@android:color/white"
@@ -213,6 +213,19 @@ android:id="@+id/number_button"
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="bottom|right|end"
         app:useCompatPadding="true"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_rating"
+        android:src="@drawable/ic_star_black_24dp"
+        app:backgroundTint="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom|right|start"
+        app:useCompatPadding="true"/>
+
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -261,6 +274,8 @@ android:id="@+id/number_button"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" />
+
+
                         <TextView
                             android:id="@+id/food_price"
                             android:text="100"
@@ -295,6 +310,21 @@ android:id="@+id/number_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RatingBar
+                        android:rating="0"
+                        android:id="@+id/ratingBar"
+                        android:max="5"
+                        android:isIndicator="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:ignore="InvalidId" />
+                
                 <TextView
                     android:id="@+id/food_description"
                     android:layout_marginTop="12dp"
@@ -305,7 +335,30 @@ android:id="@+id/number_button"
                     android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
             </android.support.v7.widget.CardView>
+
+            <info.hoang8f.widget.FButton
+                android:text="Show Comments"
+                android:textColor="@android:color/white"
+
+                android:layout_width="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="8dp"
+                app:shadowHeight="5dp"
+                app:fButtonColor="@color/colorPrimary"
+                app:shadowColor="@android:color/black"
+                app:cornerRadius="4dp"
+                app:shadowEnabled="true"
+                android:id="@+id/btnShowComment"
+                android:layout_height="wrap_content"
+                android:shadowColor="@android:color/black"
+                tools:ignore="MissingPrefix" />
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>

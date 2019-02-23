@@ -32,7 +32,7 @@ public class Database extends SQLiteAssetHelper {
     SQLiteDatabase db=getReadableDatabase();
     SQLiteQueryBuilder qb=new SQLiteQueryBuilder();
 
-        String[] sqlSelect={"ProductID","ProductName","Quantity","Price","Discount"};
+        String[] sqlSelect={"ProductID","ProductName","Quantity","Price","Discount","ID","Image"};
 
      String sqlTable="OrderDetail";
 
@@ -44,12 +44,16 @@ public class Database extends SQLiteAssetHelper {
     if(c.moveToFirst())
     {
         do{
-            result.add(new Order(c.getString(c.getColumnIndex("ProductID") ),
-                    c.getString(c.getColumnIndex("ProductName")),
-                    c.getString(c.getColumnIndex("Quantity")),
-                            c.getString(c.getColumnIndex("Price")),
+            result.add(new Order(
 
-            c.getString(c.getColumnIndex("Discount"))));
+                    c.getString(c.getColumnIndex("ProductID") ),
+                    c.getString(c.getColumnIndex("ProductName")),
+                    c.getString(c.getColumnIndex("Image")),
+                    c.getString(c.getColumnIndex("Quantity")),
+                    c.getString(c.getColumnIndex("Price")),
+                    c.getString(c.getColumnIndex("Discount")),
+                    c.getInt(c.getColumnIndex("ID"))));
+
         }while (c.moveToNext());
     }
     return result;
@@ -58,19 +62,20 @@ public class Database extends SQLiteAssetHelper {
 public void addToCart(Order order)
 {
         SQLiteDatabase db=getReadableDatabase();
-        String query=String.format("INSERT INTO OrderDetail(ProductID,ProductName,Quantity,Price,Discount) VALUES('%s','%s','%s','%s','%s');",
-             /*   order.getDiscount(),
-                order.getPrice(),
-                order.getProductName(),
-                order.getQuantity(),
-                order.getProductID());
+        String query=String.format("INSERT INTO OrderDetail(ProductID,ProductName,Quantity,Price,Discount,Image) VALUES('%s','%s','%s','%s','%s','%s');",
+//                order.getDiscount(),
+//                order.getPrice(),
+//                order.getProductName(),
+//                order.getQuantity(),
+//                order.getProductID());
 
-*/
-                order.getProductID(),
-                order.getPrice(),
-                order.getDiscount(),
-                order.getProductName(),
-                order.getQuantity());
+                order.getImage(),               // 6->2
+                order.getProductID(),//      1->4 done
+                order.getDiscount(),     //     2->5  quantity price discount  done
+                order.getProductName(),  //  3->6
+                order.getQuantity(),
+                order.getPrice()
+               );//         5->1
         db.execSQL(query);
 }
     public void cleanCart()
@@ -80,4 +85,51 @@ public void addToCart(Order order)
 
         db.execSQL(query);
     }
+
+    public void addToFavorites(String foodId)
+    {
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("INSERT INTO Favorites(FoodId) VALUES('%s');",foodId);
+        db.execSQL(query);
+    }
+    public void deleteFromFavorites(String foodId)
+    {
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("DELETE FROM Favorites WHERE FoodId ='%s';",foodId);
+        db.execSQL(query);
+    }
+    public boolean isFavorites(String foodId)
+    {
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("SELECT * FROM Favorites WHERE FoodId ='%s';",foodId);
+        Cursor cursor=db.rawQuery(query,null);
+        if(cursor.getCount()<=0)
+        {
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
+
+    }
+
+    public int getCountCart() {
+        int count=0;
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("SELECT COUNT(*) FROM OrderDetail");
+        Cursor cursor=db.rawQuery(query,null);
+        if(cursor.moveToFirst()) {
+            do {
+                count = cursor.getInt(0);
+            }while(cursor.moveToNext());
+        }
+        return count;
+    }
+
+    public void updateCart(Order order) {
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("UPDATE OrderDetail SET Quantity=%s WHERE ID=%d",order.getQuantity(),order.getID() );
+        db.execSQL(query);
+    }
 }
+

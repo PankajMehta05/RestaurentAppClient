@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#024e41</color>
     <color name="colorAccent">#39796b</color>
     <color name="btnSignUp">#39796b</color>
+    <color name="btnSignInUp">#333639</color>
     <color name="btnSignActive">#A9d440</color>
 
     <color name="overlayBackground">#7f333639</color>

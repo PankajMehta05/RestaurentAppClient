@@ -2,15 +2,50 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="resaurentapp.pankaj.com.restaurentapp">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+
+
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDLcPpcVvlRlPg-gxvpQ3653KWD__YWE58" />
+
+
+
+        <meta-data android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+
+        <meta-data android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/account_kit_client_token" />
+
+        <activity
+            android:name="com.facebook.accountkit.ui.AccountKitActivity" />
+
+
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider276939229580176"
+            android:exported="true" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignIn" />
-        <activity android:name=".SignUp" />
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
@@ -27,7 +60,20 @@
         <activity android:name=".FoodList" />
         <activity android:name=".FoodDetail" />
         <activity android:name=".Cart" />
-        <activity android:name=".OrderStatus"></activity>
+        <activity android:name=".OrderStatus" />
+
+        <service android:name=".Service.MyFirebaseIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Service.MyFirebaseMessaging">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ShowComment"></activity>
     </application>
 
 </manifest>

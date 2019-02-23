@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -32,13 +33,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
+        android:weightSum="1"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         >
 
-
-    <Button
+<!--
+    <info.hoang8f.widget.FButton
      android:text="Sign Up"
         android:textColor="@android:color/white"
         android:layout_weight="1"
@@ -46,29 +47,47 @@
         android:layout_margin="8dp"
         app:shadowHeight="5dp"
         app:cornerRadius="4dp"
-        app:buttonColor="@color/btnSignUp"
+        app:fbuttonColor="@color/btnSignInUp"
         app:shadowEnabled="true"
         android:id="@+id/btnSignUp"
         android:layout_height="wrap_content"
         android:shadowColor="@android:color/black"
         tools:ignore="MissingPrefix" />
 
-        <Button
+-->
+        <info.hoang8f.widget.FButton
+            android:text="CONTINUE"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="8dp"
+            app:shadowHeight="5dp"
+            app:fButtonColor="@color/btnSignInUp"
+            app:shadowColor="@android:color/black"
+            app:cornerRadius="4dp"
+            app:shadowEnabled="true"
+            android:id="@+id/btnContinue"
+            android:layout_height="wrap_content"
+
+            tools:ignore="MissingPrefix" />
+
+    <!--    <info.hoang8f.widget.FButton
             android:text="Sign In"
             android:textColor="@android:color/white"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_margin="8dp"
             app:shadowHeight="5dp"
-            app:buttonColor="@color/btnSignActive"
+
+            app:fButtonColor="@color/btnSignInUp"
             app:shadowColor="@android:color/black"
             app:cornerRadius="4dp"
             app:shadowEnabled="true"
             android:id="@+id/btnSignIn"
             android:layout_height="wrap_content"
-            android:shadowColor="@android:color/black"
-            tools:ignore="MissingPrefix" />
 
+            tools:ignore="MissingPrefix" />
+-->
     </LinearLayout>
 
 </RelativeLayout>
